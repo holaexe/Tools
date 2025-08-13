@@ -1,11 +1,42 @@
 import base64
 import os
+import time
+from colorama import Fore
 
 def clear():
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
+
+def ascii():
+    ascii = f""" {Fore.YELLOW}
+                                                                                                                                                                                                                
+BBBBBBBBBBBBBBBBB           66666666         444444444                                                    
+B::::::::::::::::B         6::::::6         4::::::::4                                                    
+B::::::BBBBBB:::::B       6::::::6         4:::::::::4                                                    
+BB:::::B     B:::::B     6::::::6         4::::44::::4                                                    
+  B::::B     B:::::B    6::::::6         4::::4 4::::4          ppppp   pppppppppyyyyyyy           yyyyyyy
+  B::::B     B:::::B   6::::::6         4::::4  4::::4          p::::ppp:::::::::py:::::y         y:::::y 
+  B::::BBBBBB:::::B   6::::::6         4::::4   4::::4          p:::::::::::::::::py:::::y       y:::::y  
+  B:::::::::::::BB   6::::::::66666   4::::444444::::444        pp::::::ppppp::::::py:::::y     y:::::y   
+  B::::BBBBBB:::::B 6::::::::::::::66 4::::::::::::::::4         p:::::p     p:::::p y:::::y   y:::::y    
+  B::::B     B:::::B6::::::66666:::::64444444444:::::444         p:::::p     p:::::p  y:::::y y:::::y     
+  B::::B     B:::::B6:::::6     6:::::6         4::::4           p:::::p     p:::::p   y:::::y:::::y      
+  B::::B     B:::::B6:::::6     6:::::6         4::::4           p:::::p    p::::::p    y:::::::::y       
+BB:::::BBBBBB::::::B6::::::66666::::::6         4::::4           p:::::ppppp:::::::p     y:::::::y        
+B:::::::::::::::::B  66:::::::::::::66        44::::::44 ......  p::::::::::::::::p       y:::::y         
+B::::::::::::::::B     66:::::::::66          4::::::::4 .::::.  p::::::::::::::pp       y:::::y          
+BBBBBBBBBBBBBBBBB        666666666            4444444444 ......  p::::::pppppppp        y:::::y           
+                                                                 p:::::p               y:::::y            
+                                                                 p:::::p              y:::::y             
+                                                                p:::::::p            y:::::y              
+                                                                p:::::::p           y:::::y               
+                                                                p:::::::p          yyyyyyy                
+                                                                ppppppppp                                 
+                                                                                                          
+"""
+    print(ascii)
 
 def text_encode():
     text = input("Enter Text >> ")
@@ -15,7 +46,6 @@ def text_encode():
     except Exception as e:
         print(f"Error >> {e}")
     input("Press Enter to continue...")
-    clear()
     main()
 
 def text_decode():
@@ -26,7 +56,6 @@ def text_decode():
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to continue...")
-    clear()
     main()
 
 def encode_txt_file():
@@ -41,7 +70,6 @@ def encode_txt_file():
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to continue...")
-    clear()
     main()
 
 def decode_txt_file():
@@ -55,7 +83,6 @@ def decode_txt_file():
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to continue...")
-    clear()
     main()
         
 def encode_py():
@@ -74,17 +101,18 @@ exec(base64.b64decode("{encoded}").decode())
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to continue...")
-    clear()
     main()
 
 
 def main():
-    print("[1] - Encode Text")
-    print("[2] - Decode Text")
-    print("[3] - Encode TXT File")
-    print("[4] - Decode TXT file")
-    print("[5] - Encode PY File")
-    print("[6] - Decode PY File")
+    clear()
+    ascii()
+    print("\n                                       [1] - Encode Text")
+    print("                                       [2] - Decode Text")
+    print("                                       [3] - Encode TXT File")
+    print("                                       [4] - Decode TXT file")
+    print("                                       [5] - Encode PY File")
+    print("                                       [6] - Decode PY File")
     option = input("user#root:3> ")
     if option == '1':
         text_encode()
