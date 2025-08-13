@@ -32,6 +32,8 @@ def ip_pinger():
 
     except Exception as e:
         print(f"Error: {e}")
+    input("Press Enter to return...")
+    main()
 
 def main():
     clear()
@@ -47,3 +49,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
