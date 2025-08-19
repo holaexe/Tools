@@ -197,3 +197,7 @@ def webhook_main():
         input("\nPress Enter to return")
         clear()
         webhook_main()
+
+
+if __name__ == '__main__':
+    webhook_main()
