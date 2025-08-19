@@ -47,7 +47,9 @@ def response_checker():
         print(f"Response time >> {elapsed:.3f}")
     except Exception as e:
         print(f"Error >> {e}")
-
+    input("Press Enter to return...")
+    main()
+    
 def redirect_checker():
     site = input("Enter Website to check [https at start] >> ")
     try:
@@ -58,6 +60,8 @@ def redirect_checker():
         print(f"Original Link >> {r.status_code} >> {r.url}")
     except Exception as e:
         print(f"Error >> {e}")
+    input("Press Enter to return...")
+    main()
 
 def main():
     clear()
