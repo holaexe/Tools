@@ -60,8 +60,10 @@ def main():
         time.sleep(0.5)
         main()
 
-input("Press Enter to return")
-main()
-final = ip_lookup()
+
+final = main()
 if __name__ == '__main__':
     print(final)
+    input("Press Enter to return")
+    main()
+
