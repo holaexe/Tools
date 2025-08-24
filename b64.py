@@ -64,8 +64,8 @@ def encode_txt_file():
         with open(file, "r") as f:
             info = f.read()
         encoded = base64.b64encode(info.encode()).decode()
-        with open(file, "w") as file:
-            file.write(encoded)
+        with open(file, "w") as fw:
+            fw.write(encoded)
         print(f"File Successfully Encoded >> {file}")
     except Exception as e:
         print(f"Error: {e}")
@@ -78,8 +78,8 @@ def decode_txt_file():
         with open(file, "r") as f:
             info = f.read()
         decoded = base64.b64decode(info.encode()).decode()
-        with open(file, "w") as file:
-            f.write(decoded)
+        with open(file, "w") as fw:
+            fw.write(decoded)
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to continue...")
