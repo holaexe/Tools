@@ -51,33 +51,44 @@ def nitro_options():
 
     infinite = input("Would you like it to run infinitely? [Y or N] >> ")
     if infinite.lower().strip() == 'y':
-        while True:
-            nitro_gen()
+        nitro_gen(infinite=True)
     elif infinite.lower().strip() == 'n':
-        nitro_gen()
+        nitro_gen(infinite=False)
     else:
         print("Invalid Option")
         main()
 
-def nitro_gen():
+def nitro_gen(infinite=False):
     global webhook
     clear()
     ascii_art()
     print("Generating Nitro Codes...")
     try:
-        codes = []
-        for i in range(100):
-            code = f"discord.gift/{''.join(random.choices(string.ascii_letters + string.digits, k=16))}"
-            codes.append(code)
-            print(f"\rGenerated Code: {code}", end="")
-            time.sleep(0.1)
-        print("\nCodes generated successfully!")
-        if webhook:
-            for code in codes:
-                try:
-                    requests.post(webhook, json={"content": code})
-                except Exception as e:
-                    print(f"Error sending to webhook: {e}")
+        if infinite:
+            print("Running infinitely... Press Ctrl+C to stop.")
+            while True:
+                code = f"discord.gift/{''.join(random.choices(string.ascii_letters + string.digits, k=16))}"
+                print(f"\rGenerated Code: {code}")
+                if webhook:
+                    try:
+                        requests.post(webhook, json={"content": code})
+                    except Exception as e:
+                        print(f"Error sending to webhook: {e}")
+                time.sleep(0.1)
+        else:
+            codes = []
+            for i in range(100):
+                code = f"discord.gift/{''.join(random.choices(string.ascii_letters + string.digits, k=16))}"
+                codes.append(code)
+                print(f"\rGenerated Code: {code}")
+                time.sleep(0.1)
+            print("\nCodes generated successfully!")
+            if webhook:
+                for code in codes:
+                    try:
+                        requests.post(webhook, json={"content": code})
+                    except Exception as e:
+                        print(f"Error sending to webhook: {e}")
     except Exception as e:
         print(f"Error: {e}")
     input("Press Enter to Return...")
