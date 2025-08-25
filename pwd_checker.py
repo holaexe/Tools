@@ -23,6 +23,7 @@ SSSSS       SSSSSsSS SSsSSSSS SSSSSsS;:'       SSSSSsSSSSS SSSSS SSSSS SSSSSsSS;
     print(ascii)
 
 def check_pwd():
+    clear()
     ascii()
     pwd = input("\nEnter Password to Rate >> ")
     strength = 0
@@ -42,4 +43,5 @@ def check_pwd():
     check_pwd()
 
 if __name__ == "__main__":  
+
     check_pwd()
