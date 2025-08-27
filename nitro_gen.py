@@ -20,6 +20,7 @@ ooooo      ooo  o8o      .                             .oooooo.
  8     `88b.8   888    888    888     888   888      888     ooooo 888ooo888  888   888  
  8       `888   888    888 .  888     888   888      `88.    .88'  888    .o  888   888  
 o8o        `8  o888o   "888" d888b    `Y8bod8P'       `Y8bood8P'   `Y8bod8P' o888o o888o 
+            DISCLAIMER: Chances of getting a real nitro code are almost IMPOSSIBLE
 """
     print(ascii)
 
@@ -108,3 +109,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
